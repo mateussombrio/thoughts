@@ -1,7 +1,14 @@
-const {DataTypes} = require("sequelize");
+const { DataTypes } = require("sequelize");
 
-const db = require("../db/conn")
+const db = require("../db/conn");
 
-const Post = db.require("Post",{
-    
-})
+const User = require("./User");
+
+const Post = db.define("Post", {
+  description: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+});
+
+module.exports = Post;
