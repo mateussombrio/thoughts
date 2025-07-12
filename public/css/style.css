@@ -14,14 +14,22 @@ nav {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
+
+
 .pages a {
   margin: 20px;
   color: 393D3F;
   text-decoration: none;
 }
 
-.dark-light-button{
-    border: 0;
-    border-radius: 5px;
+.dark-light-button {
+  border: 0;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: E8EDF2;
 }
 
+.dark-light-button:hover {
+  transition: transform 0.3s ease;
+  transform: scale(1.05);
+}
