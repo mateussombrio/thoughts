@@ -16,7 +16,7 @@ app.use(express.static("public"));
 app.use("/", postRoutes)
 
 conn
-  .sync()
+  .sync({alter:true})
   .then(() => {
     app.listen(3000);
   })

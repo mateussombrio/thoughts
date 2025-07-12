@@ -6,15 +6,18 @@ body {
 }
 
 nav {
-  align-items: center;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
   margin-top: 2%;
   padding-bottom: 2%;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-
+.pages{
+  position: absolute;
+  left: 45%;
+}
 
 .pages a {
   margin: 20px;
@@ -32,4 +35,18 @@ nav {
 .dark-light-button:hover {
   transition: transform 0.3s ease;
   transform: scale(1.05);
+}
+
+.user-button{
+    border: 0;
+    background-color: E8EDF2;
+    padding: 10px;
+    border-radius: 50%;
+
+}
+
+.button-and-user{
+  display: flex;
+  gap: 30px;
+  margin-right: 2%;
 }

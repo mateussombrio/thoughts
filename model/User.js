@@ -20,6 +20,10 @@ const User = db.define("User", {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  photo: {
+    type: DataTypes.BLOB,
+    allowNull: true
+  }
 });
 
 module.exports = User;
