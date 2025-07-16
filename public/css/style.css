@@ -10,10 +10,8 @@ nav {
   align-items: center;
   justify-content: space-between;
   margin-top: 2%;
-  padding-bottom: 2%;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
-
 .pages{
   position: absolute;
   left: 45%;
@@ -23,6 +21,7 @@ nav {
   margin: 20px;
   color: 393D3F;
   text-decoration: none;
+  font-weight: 600;
 }
 
 .dark-light-button {
@@ -49,4 +48,15 @@ nav {
   display: flex;
   gap: 30px;
   margin-right: 2%;
+}
+
+.logo{
+  display: flex;
+  margin-left: 1%;
+}
+
+.div-search-bar{
+  display: flex;
+  justify-content: center;
+  margin: 2%;
 }
