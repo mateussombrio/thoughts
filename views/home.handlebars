@@ -1,14 +1,21 @@
-<div class="div-search-bar">
-    <input type="text" placeholder="Search">
-</div>
+<div class="div-home">
+  <div class="search-box">
+    <button class="btn-search"><img
+        src="assets/search-icon.svg"
+        alt=""
+      /></button>
+    <input type="text" class="input-search" placeholder="Type to Search..." />
+  </div>
 
-{{#each post}}
+  {{#each post}}
     <div class="div-post">
-        <div class="div-user">
-            <img src="assets/person.svg" alt="user-icon">
-            <p>{{this.User.name}} {{this.User.lastname}}</p>
-        </div>
-        <p>{{this.description}}</p>
+      <div class="div-user">
+        <img src="assets/person.svg" alt="user-icon" />
+        <p>{{this.User.name}} {{this.User.lastname}}</p>
+      </div>
+      <p>{{this.description}}</p>
     </div>
 
-{{/each}}
+  {{/each}}
+
+</div>

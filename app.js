@@ -2,7 +2,7 @@ const express = require("express");
 const exphb = require("express-handlebars");
 const conn = require("./db/conn");
 const Post = require("./model/Post");
-const postRoutes = require("./routes/postRoutes")
+const postRoutes = require("./routes/postRoutes");
 
 const app = express();
 
@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static("public"));
 
-app.use("/", postRoutes)
+app.use("/", postRoutes);
 
 conn
   .sync()

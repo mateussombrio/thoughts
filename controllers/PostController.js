@@ -1,5 +1,4 @@
-const Post = require("../model/Post");
-const User = require("../model/User")
+const { Post, User } = require("../model");
 
 module.exports = class PostController {
   static renderPost(req, res) {
@@ -16,12 +15,12 @@ module.exports = class PostController {
 
   static async showPost(req, res) {
     const post = await Post.findAll({
-      include:{
+      include: {
         model: User,
-        attributes: ['name', 'lastname']
-      }
+        attributes: ["name", "lastname"],
+      },
     });
 
-    res.render("home", {post})
+    res.render("home", { post });
   }
 };
