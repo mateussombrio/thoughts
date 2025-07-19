@@ -13,6 +13,7 @@
   </head>
   <body>
     {{!-- Nav Bar --}}
+    {{#unless hideNavbar}}
     <nav>
       {{!-- Logo --}}
       <div class="logo">
@@ -33,6 +34,7 @@
         </button>
       </div>
     </nav>
+    {{/unless}}
     {{{body}}}
   </body>
 </html>

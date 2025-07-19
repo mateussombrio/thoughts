@@ -1,16 +1,31 @@
-<div class="login">
-  <h3>Login</h3>
-  <label for="user">Username</label>
-  <form action="user/login" method="post">
-    <input type="text" value="username" />
-  </form>
-  <label for="password">Password</label>
-  <form action="user/login" method="post">
-    <input type="password" value="password" />
-  </form>
-  <button type="submit">Login</button>
-</div>
+<div class="div-login-user">
+  <!-- Login -->
+  <div class="form-card">
+    <h3>Login</h3>
+    <form action="/user/login" method="POST">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="Digite seu nome" required />
 
-<div class="create-user">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Digite sua senha" required />
 
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+<div class="vertical-rule"></div>
+
+  <!-- Create Account -->
+  <div class="form-card">
+    <h3>Create Account</h3>
+    <form action="/user/create" method="POST">
+      <label for="newUsername">Username</label>
+      <input type="text" id="newUsername" name="username" placeholder="Digite seu nome" required />
+
+      <label for="newPassword">Password</label>
+      <input type="password" id="newPassword" name="password" placeholder="Digite uma senha" required />
+
+      <button type="submit">Criar Conta</button>
+    </form>
+  </div>
 </div>
