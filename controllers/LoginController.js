@@ -4,18 +4,22 @@ const { User } = require("../model");
 
 module.exports = class LoginController {
   static renderLogin(req, res) {
-    res.render("login", {hideNavbar: true});
+    res.render("login", { hideNavbar: true });
   }
 
   static async authenticateUser(req, res) {
-    const nameTyped = req.body.username;
+    const usernameTyped = req.body.username;
+    const passwordTyped = req.body.password;
 
-    const user = await User.findOne({ where: { name: nameTyped } });
+    try {
+      const user = await User.findOne({ where: { username: usernameTyped } });
+      const password = await User.findOne({where: {password: passwordTyped}})
 
-    if (nameTyped == user.username) {
-      res.render("home");
-    } else {
-      alert("Erro no login");
+      if (usernameTyped === user.username && passwordTyped === password.password) {
+        res.render("home");
+      }
+    } catch (err) {
+      console.log(err);
     }
   }
 };

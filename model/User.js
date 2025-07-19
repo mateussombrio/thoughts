@@ -23,6 +23,10 @@ const User = db.define("User", {
   photo: {
     type: DataTypes.BLOB,
     allowNull: true
+  },
+  username: {
+    type: DataTypes.STRING,
+    allowNull: false
   }
 });
 

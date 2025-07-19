@@ -176,7 +176,7 @@ nav {
 }
 
 /* Botões */
-.form-card button {
+.form-card .button {
   width: 100%;
   padding: 12px;
   background-color: #353839;
@@ -188,7 +188,7 @@ nav {
   transition: background-color 0.3s ease;
 }
 
-.form-card button:hover {
+.form-card .button:hover {
   background-color: #353839;
 }
 

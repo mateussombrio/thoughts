@@ -3,7 +3,8 @@ const exphb = require("express-handlebars");
 const conn = require("./db/conn");
 const Post = require("./model/Post");
 const postRoutes = require("./routes/postRoutes");
-const loginRoutes = require("./routes/loginRoutes")
+const loginRoutes = require("./routes/loginRoutes");
+const userRoutes = require("./routes/userRoutes");
 const app = express();
 
 app.engine("handlebars", exphb.engine());
@@ -15,7 +16,9 @@ app.use(express.static("public"));
 
 app.use("/", postRoutes);
 
-app.use("/login", loginRoutes)
+app.use("/login", loginRoutes);
+
+app.use("/user", userRoutes);
 
 conn
   .sync()
