@@ -13,13 +13,19 @@ module.exports = class LoginController {
 
     try {
       const user = await User.findOne({ where: { username: usernameTyped } });
-      const password = await User.findOne({where: {password: passwordTyped}})
 
-      if (usernameTyped === user.username && passwordTyped === password.password) {
-        res.render("home");
+      if (!user) {
+        return res.render("login", { error: "Usuário não encontrado" });
       }
+
+      if (user.password !== passwordTyped) {
+        return res.render("login", { error: "Senha incorreta" });
+      }
+
+      req.session.userId = user.id;
+      req.session.username = user.name;
     } catch (err) {
-      console.log(err);
+      console.error("Erro ao autenticar o usuário", err);
     }
   }
 };
