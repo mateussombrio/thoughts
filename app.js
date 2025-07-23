@@ -17,7 +17,6 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static("public"));
 
-
 app.use(
   session({
     secret: process.env.SECRET,
@@ -30,7 +29,6 @@ app.use(
   })
 );
 
-
 app.use(async (req, res, next) => {
   if (req.session.userId) {
     try {
@@ -39,7 +37,7 @@ app.use(async (req, res, next) => {
       });
       // User fica acessível para todas as views
       if (user) {
-        res.locals.user = user;
+        res.locals.user = user.get({ plain: true });
       }
     } catch (err) {
       console.error("Erro ao autenticar: ", err);

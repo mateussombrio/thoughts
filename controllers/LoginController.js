@@ -15,17 +15,23 @@ module.exports = class LoginController {
       const user = await User.findOne({ where: { username: usernameTyped } });
 
       if (!user) {
-        return res.render("login", { error: "Usuário não encontrado" });
+        return req.session.save(() => {
+          res.render("login", { error: "Usuário não encontrado" });
+        });
       }
 
       if (user.password !== passwordTyped) {
-        return res.render("login", { error: "Senha incorreta" });
+        return req.session.save(() => {
+          res.render("login", { error: "Senha incorreta" });
+        });
       }
 
       req.session.userId = user.id;
       req.session.username = user.name;
 
-      res.redirect("/")
+      req.session.save(() => {
+        res.redirect("/");
+      });
     } catch (err) {
       console.error("Erro ao autenticar o usuário", err);
     }

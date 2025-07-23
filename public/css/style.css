@@ -43,12 +43,6 @@ nav {
   border-radius: 50%;
 }
 
-.button-and-user {
-  display: flex;
-  gap: 30px;
-  margin-right: 2%;
-}
-
 .logo {
   display: flex;
   margin-left: 1%;
@@ -198,5 +192,48 @@ nav {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-.div-post {
+.button-and-user {
+    position: relative;
+    display: flex;
+    margin-right: 3%;
+    gap: 20px;
+}
+
+/* Estilo básico para o menu suspenso */
+.user-options {
+    display: flex; /* Escondido por padrão */
+    position: absolute;
+    background-color: #f9f9f9; /* Cor de fundo do menu */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1; /* Garante que o menu apareça sobre outros elementos */
+    right: 0; /* Alinha o menu à direita do botão */
+    border-radius: 8px;
+    padding: 10px 0;
+    margin-top: 55%;
+}
+
+.user-options h4 {
+    padding: 8px 16px;
+    margin: 0;
+    font-size: 0.9em;
+    color: #333;
+}
+
+.user-options ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.user-options ul li a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.2s;
+}
+
+.user-options ul li a:hover {
+    background-color: #ddd;
 }

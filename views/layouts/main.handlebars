@@ -15,15 +15,18 @@
     {{!-- Nav Bar --}}
     {{#unless hideNavbar}}
     <nav>
+
       {{!-- Logo --}}
       <div class="logo">
         <img src="assets/logo.png" alt="" />
       </div>
+
       {{!-- Pages --}}
       <div class="pages">
         <a href="">Home</a>
         <a href="">Your Thoughts</a>
       </div>
+
       {{!-- Buttons --}}
       <div class="button-and-user">
         <button class="dark-light-button">
@@ -32,9 +35,17 @@
         <button class="user-button">
             <img src="assets/person.svg" alt="user-icon">
         </button>
+
+        {{#if user}}
       <div class="user-options">
-        <h4>Olá {{{user.username}}}</h4>
+        <h4>Olá, {{user.username}}</h4>
+        <ul>
+          <li><a href="/user/profile">Perfil</a></li>
+          <li><a href="/logout">Logout</a></li>
+        </ul>
       </div>
+      {{/if}}
+
       </div>
     </nav>
     {{/unless}}
