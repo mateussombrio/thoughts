@@ -24,6 +24,8 @@ module.exports = class LoginController {
 
       req.session.userId = user.id;
       req.session.username = user.name;
+
+      res.redirect("/")
     } catch (err) {
       console.error("Erro ao autenticar o usuário", err);
     }

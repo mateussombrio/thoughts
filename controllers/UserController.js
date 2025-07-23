@@ -12,7 +12,9 @@ module.exports = class UserController {
       password: req.body.password,
     };
 
-    await User.create(user);
-    res.render("home");
+    if (!user){
+      await User.create(user);
+      res.render("home");
+    }
   }
 };

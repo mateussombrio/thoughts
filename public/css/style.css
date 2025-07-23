@@ -56,6 +56,7 @@ nav {
 
 .div-home {
   display: flex;
+  flex-direction: column;
   margin-top: 2%;
   margin-left: 15%;
   margin-right: 15%;
@@ -121,7 +122,6 @@ nav {
   padding-left: 60px; /* Para não sobrepor o botão */
   transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
 }
-
 
 /* Login */
 
@@ -192,8 +192,11 @@ nav {
   background-color: #353839;
 }
 
-.vertical-rule{
+.vertical-rule {
   width: 1px;
   height: 50vh;
   background-color: rgba(0, 0, 0, 0.2);
+}
+
+.div-post {
 }

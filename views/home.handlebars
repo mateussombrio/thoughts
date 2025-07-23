@@ -1,23 +1,22 @@
-{{#if user}}
+{{!-- {{#if user}} --}}
 
 <div class="div-home">
   <div class="search-box">
-    <button class="btn-search"><img
-        src="assets/search-icon.svg"
-        alt=""
-      /></button>
+    <button class="btn-search">
+      <img src="assets/search-icon.svg" alt="" />
+    </button>
     <input type="text" class="input-search" placeholder="Type to Search..." />
   </div>
 
-  {{#each post}}
-    <div class="div-post">
-      <div class="div-user">
-        <img src="assets/person.svg" alt="user-icon" />
-        <p>{{this.User.name}} {{this.User.lastname}}</p>
-      </div>
-      <p>{{this.description}}</p>
+  {{!-- {{#each post}} --}}
+  <div class="div-post">
+    <div class="div-user">
+      <img src="assets/person.svg" alt="user-icon" />
+      <p>{{this.User.name}} {{this.User.lastname}}</p>
     </div>
+    <p>{{this.description}}</p>
+  </div>
 
 </div>
-  {{/each}}
-{{/if}}
+{{!-- {{/each}} --}}
+{{!-- {{/if}} --}}
