@@ -46,9 +46,13 @@ app.use(async (req, res, next) => {
   next();
 });
 
+app.get("/", (req, res) =>{
+  res.render("home")
+})
+
 app.use("/login", loginRoutes);
 
-app.use("/", postRoutes);
+app.use("/posts", postRoutes);
 
 app.use("/user", userRoutes);
 conn

@@ -41,6 +41,12 @@ nav {
   background-color: E8EDF2;
   padding: 10px;
   border-radius: 50%;
+  cursor: pointer;
+}
+
+.img-user{
+  width: 24px;
+  height: 24px;
 }
 
 .logo {
@@ -201,7 +207,7 @@ nav {
 
 /* Estilo básico para o menu suspenso */
 .user-options {
-    display: flex; /* Escondido por padrão */
+    display: none; /* Escondido por padrão */
     position: absolute;
     background-color: #f9f9f9; /* Cor de fundo do menu */
     min-width: 160px;
@@ -236,4 +242,8 @@ nav {
 
 .user-options ul li a:hover {
     background-color: #ddd;
+}
+
+.post-input{
+  border-radius: 5px;
 }

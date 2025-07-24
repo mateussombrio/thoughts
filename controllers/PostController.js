@@ -1,10 +1,6 @@
 const { Post, User } = require("../model");
 
 module.exports = class PostController {
-  static renderPost(req, res) {
-    res.render("home");
-  }
-
   static async createPost(req, res) {
     const post = {
       description: req.body.description,

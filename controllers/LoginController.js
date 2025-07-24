@@ -36,4 +36,10 @@ module.exports = class LoginController {
       console.error("Erro ao autenticar o usuário", err);
     }
   }
+
+  static logout(req, res) {
+    req.session.destroy(() => {
+      res.redirect("/login");
+    });
+  }
 };

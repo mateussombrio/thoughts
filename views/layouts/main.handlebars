@@ -32,8 +32,13 @@
         <button class="dark-light-button">
             <img class="light-mode" src="assets/light-mode.svg" alt="light-mode">
         </button>
+
         <button class="user-button">
-            <img src="assets/person.svg" alt="user-icon">
+        {{#if user.photo}}
+            <img class="img-user" src="{{user.photo}}" alt="user-photo">
+        {{else}}
+        <img class="img-user" src="assets/default-user-image.png" alt="default-user-photo">
+        {{/if}}
         </button>
 
         {{#if user}}
@@ -41,7 +46,7 @@
         <h4>Olá, {{user.username}}</h4>
         <ul>
           <li><a href="/user/profile">Perfil</a></li>
-          <li><a href="/logout">Logout</a></li>
+          <li><a href="/login/logout">Logout</a></li>
         </ul>
       </div>
       {{/if}}
@@ -50,5 +55,6 @@
     </nav>
     {{/unless}}
     {{{body}}}
+    <script src="script.js"></script>
   </body>
 </html>

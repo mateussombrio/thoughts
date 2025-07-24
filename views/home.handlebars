@@ -1,4 +1,4 @@
-{{#if user}}
+{{!-- {{#if user}} --}}
 
 <div class="div-home">
   <div class="search-box">
@@ -8,7 +8,15 @@
     <input type="text" class="input-search" placeholder="Type to Search..." />
   </div>
 
-  {{#each post}}
+  {{!-- Textfield para criar o post --}}
+  <div class="post-input">
+    <form action="/posts" method="post">
+      <input type="text" name="description" placeholder="What are you thinking about?">
+    </form>
+  </div>
+
+
+  {{!-- {{#each post}} --}}
   <div class="div-post">
     <div class="div-user">
       <img src="assets/person.svg" alt="user-icon" />
@@ -18,6 +26,6 @@
   </div>
 
 </div>
-{{/each}}
+{{!-- {{/each}} --}}
 
-{{/if}}
+{{!-- {{/if}} --}}
