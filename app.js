@@ -31,6 +31,7 @@ app.use(
 
 app.use(async (req, res, next) => {
   if (req.session.userId) {
+    console.log(req.session.userId)
     try {
       const user = await User.findByPk(req.session.userId, {
         attributes: ["id", "name", "lastname", "username", "photo"],
@@ -38,6 +39,7 @@ app.use(async (req, res, next) => {
       // User fica acessível para todas as views
       if (user) {
         res.locals.user = user.get({ plain: true });
+        console.log(res.locals.user)
       }
     } catch (err) {
       console.error("Erro ao autenticar: ", err);
@@ -46,6 +48,8 @@ app.use(async (req, res, next) => {
   next();
 });
 
+
+// Tenho que tirar isso depois
 app.get("/", (req, res) =>{
   res.render("home")
 })

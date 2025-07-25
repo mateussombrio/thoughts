@@ -8,7 +8,7 @@ const Post = db.define("Post", {
   description: {
     type: DataTypes.STRING,
     allowNull: false,
-  },
+  }
 });
 
 module.exports = Post;

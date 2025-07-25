@@ -2,11 +2,14 @@ const { Post, User } = require("../model");
 
 module.exports = class PostController {
   static async createPost(req, res) {
-    const post = {
-      description: req.body.description,
-    };
+    const userId = req.session.userId
 
-    await Post.create(post);
+    const {description} = req.body
+
+    await Post.create({
+      description: description,
+      userId: userId
+    });
   }
 
   static async showPost(req, res) {
@@ -17,6 +20,12 @@ module.exports = class PostController {
       },
     });
 
-    res.render("home", { post });
+    const plainPost = post.map((post) => post.get({ plain: true }));
+
+    console.log(plainPost)
+
+    req.session.save( () =>{
+      res.render("home", {post:plainPost});
+    })
   }
 };

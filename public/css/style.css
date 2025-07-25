@@ -60,7 +60,7 @@ nav {
   margin-top: 2%;
   margin-left: 15%;
   margin-right: 15%;
-  background-color: #770000;
+  align-items: center;
 }
 
 /* Search Bar */
@@ -245,5 +245,58 @@ nav {
 }
 
 .post-input{
+  width: 50%;
+}
+
+.post-textarea{
   border-radius: 5px;
+  resize: none;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-y: hidden;
+  padding: 10px;
+  min-height: 80px;
+  font-family: inherit;
+  background-color: #b6b6b6;
+  border: none;
+}
+
+.post-textarea:focus {
+    outline: none; /* Remove o contorno padrão do navegador */
+    border-color: #8a8a8a; 
+    box-shadow: 0 0 5px rgba(95, 95, 95, 0.5);
+}
+
+.button-textarea{
+  width: 36px;
+  height: 36px;
+  border-radius: 20px;
+  margin-left: -6%;
+  margin-top: 9%;
+  margin-bottom: 1%;
+  border: none;
+  background-color: #d3d3d3;
+  cursor: pointer;
+}
+
+.post-form{
+  display: flex;
+  flex-direction: row;
+}
+
+.div-post{
+display: flex;
+justify-content: center;
+flex-direction: column;
+border-bottom: 1px solid #353935;
+width: 50%;
+}
+
+.div-user{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+/* background-color: rgb(53, 53, 53); */
 }

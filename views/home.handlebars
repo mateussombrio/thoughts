@@ -10,22 +10,32 @@
 
   {{!-- Textfield para criar o post --}}
   <div class="post-input">
-    <form action="/posts" method="post">
-      <input type="text" name="description" placeholder="What are you thinking about?">
+    <form action="/posts" method="post" class="post-form">
+      <textarea class="post-textarea" name="description" placeholder="What are you thinking about?" rows="1"></textarea>
+      <button type="submit" class="button-textarea">
+        <img src="assets/submit-button.svg" alt="submit-button">
+      </button>
     </form>
   </div>
 
 
-  {{!-- {{#each post}} --}}
+  {{#each post}}
   <div class="div-post">
     <div class="div-user">
-      <img src="assets/person.svg" alt="user-icon" />
-      <p>{{this.User.name}} {{this.User.lastname}}</p>
+
+      <div class="div-user-image">
+        <img src="assets/person.svg" alt="user-icon" />
+      </div>
+
+      <div class="div-user-info">
+        <p>{{this.User.name}} {{this.User.lastname}}</p>
+      </div>
+      
     </div>
     <p>{{this.description}}</p>
   </div>
 
 </div>
-{{!-- {{/each}} --}}
+{{/each}}
 
 {{!-- {{/if}} --}}
