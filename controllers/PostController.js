@@ -18,11 +18,10 @@ module.exports = class PostController {
         model: User,
         attributes: ["name", "lastname"],
       },
+      order: [['createdAt', 'DESC']]
     });
 
     const plainPost = post.map((post) => post.get({ plain: true }));
-
-    console.log(plainPost)
 
     req.session.save( () =>{
       res.render("home", {post:plainPost});

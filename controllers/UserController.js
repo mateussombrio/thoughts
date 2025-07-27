@@ -12,9 +12,15 @@ module.exports = class UserController {
       password: req.body.password,
     };
 
-    if (!user){
+    if (!user) {
       await User.create(user);
       res.render("home");
     }
+  }
+
+  static showUserProfile(req, res) {
+    req.session.save(() => {
+      res.render("user");
+    });
   }
 };
