@@ -23,4 +23,8 @@ module.exports = class UserController {
       res.render("user");
     });
   }
+
+  static getUserImage(req, res){
+    
+  }
 };
