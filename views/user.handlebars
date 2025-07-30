@@ -1,6 +1,4 @@
-<form action="/upload-image" method="POST" enctype="multipart/form-data">
-    <label for="imageUpload">Selecione sua imagem:</label>
-    <input type="file" id="imageUpload" name="userImage" accept="image/*">
-    <br>
-    <button type="submit">Enviar Imagem</button>
+<form action="/user/image" method="post">
+    <input type="file" name="uploadImage" accept="image/*" class="input-uploadImage">
+    <button type="submit" class="button-uploadImage">Change Photo</button>
 </form>
