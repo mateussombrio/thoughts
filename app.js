@@ -10,12 +10,15 @@ const userRoutes = require("./routes/userRoutes");
 const { User } = require("./model");
 const app = express();
 dotenv.config();
+
+
 app.engine("handlebars", exphb.engine());
 app.set("view engine", "handlebars");
 
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static("public"));
+app.use("/uploads", express.static("public/uploads"))
 
 app.use(
   session({

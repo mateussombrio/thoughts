@@ -24,7 +24,12 @@ module.exports = class UserController {
     });
   }
 
-  static getUserImage(req, res){
-    
+  static async createUserImage(req, res) {
+    const userId = req.user.userId;
+    const imagePath = `/uploads/${req.file.filename}`;
+
+    await User.update({ photo: imagePath }, { where: { id: userId } });
+
+    res.render("user", {imagePath})
   }
 };
