@@ -10,3 +10,12 @@ function toggleUserOptions() {
 }
 
 userButton.addEventListener("click", toggleUserOptions);
+
+const buttonUploadImage = document.querySelector(".button-uploadImage");
+const inputUploadImage = document.querySelector(".input-uploadImage");
+
+function uploadImage() {
+  inputUploadImage.click();
+}
+
+buttonUploadImage.addEventListener("click", uploadImage);
